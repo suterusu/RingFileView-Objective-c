@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class UIImage;
 
-@protocol RingFileViewDataSourceProtocol <NSObject>
-
+@protocol ProtocolRingFileViewDataSource <NSObject>
 
 -(UIImage *)getNextPageImageAtPageIndex:(NSInteger)pageIndex;
-
 
 @end

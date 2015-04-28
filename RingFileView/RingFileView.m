@@ -85,7 +85,7 @@ typedef void (^AfterAnimationBlock)();
     return self;
 }
 
--(void)setA:(CATransform3D)transform{
+-(void)setBaseTransform:(CATransform3D)transform{
     _baseTransform = transform;
     _rightImageLayer.transform = transform;
     _leftImageLayer.transform = transform;
@@ -260,7 +260,7 @@ typedef void (^AfterAnimationBlock)();
     
      
     CAKeyframeAnimation *animationZPotisiont = [CAKeyframeAnimation animationWithKeyPath:@"zPosition"];
-    animationZPotisiont.values = @[@1,[NSNumber numberWithFloat:_ringRadius],@1];
+    animationZPotisiont.values = @[@2,[NSNumber numberWithFloat:_ringRadius],@2];
     animationZPotisiont.keyTimes = @[@0,@(0.5),@1];
     animationZPotisiont.duration = _animationDuration;
     

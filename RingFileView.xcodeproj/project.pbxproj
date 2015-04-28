@@ -116,6 +116,7 @@
 		083FDE171AEFB8BC00F183DE /* th_th_fuga_97.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 083FDDAA1AEFB8BC00F183DE /* th_th_fuga_97.jpg */; };
 		083FDE181AEFB8BC00F183DE /* th_th_fuga_98.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 083FDDAB1AEFB8BC00F183DE /* th_th_fuga_98.jpg */; };
 		083FDE191AEFB8BC00F183DE /* th_th_fuga_99.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 083FDDAC1AEFB8BC00F183DE /* th_th_fuga_99.jpg */; };
+		08422F021AEFEDE500701682 /* ImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 08422F011AEFEDE500701682 /* ImageProvider.m */; };
 		08D1CA331AE2D9EF0025CB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D1CA321AE2D9EF0025CB71 /* main.m */; };
 		08D1CA361AE2D9EF0025CB71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D1CA351AE2D9EF0025CB71 /* AppDelegate.m */; };
 		08D1CA391AE2D9EF0025CB71 /* RingFileView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08D1CA371AE2D9EF0025CB71 /* RingFileView.xcdatamodeld */; };
@@ -251,6 +252,8 @@
 		083FDDAA1AEFB8BC00F183DE /* th_th_fuga_97.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = th_th_fuga_97.jpg; sourceTree = "<group>"; };
 		083FDDAB1AEFB8BC00F183DE /* th_th_fuga_98.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = th_th_fuga_98.jpg; sourceTree = "<group>"; };
 		083FDDAC1AEFB8BC00F183DE /* th_th_fuga_99.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = th_th_fuga_99.jpg; sourceTree = "<group>"; };
+		08422F001AEFEDE500701682 /* ImageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProvider.h; sourceTree = "<group>"; };
+		08422F011AEFEDE500701682 /* ImageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProvider.m; sourceTree = "<group>"; };
 		08D1CA2D1AE2D9EF0025CB71 /* RingFileView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingFileView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D1CA311AE2D9EF0025CB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D1CA321AE2D9EF0025CB71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -413,6 +416,25 @@
 			path = blackJack;
 			sourceTree = "<group>";
 		};
+		08422F031AF001F800701682 /* RingFileView */ = {
+			isa = PBXGroup;
+			children = (
+				08D1CA591AE2DA090025CB71 /* RingFileViewDataSourceProtocol.h */,
+				08D1CA5A1AE2DA090025CB71 /* RingFileView.h */,
+				08D1CA5B1AE2DA090025CB71 /* RingFileView.m */,
+				08D1CA5C1AE2DA090025CB71 /* OneSideNoAllowDoubleObjectLeftAndRightQueueMnager.h */,
+				08D1CA5D1AE2DA090025CB71 /* OneSideNoAllowDoubleObjectLeftAndRightQueueMnager.m */,
+				08D1CA5E1AE2DA090025CB71 /* LeftAndRightQueueMnager.h */,
+				08D1CA5F1AE2DA090025CB71 /* LeftAndRightQueueMnager.m */,
+				08D1CA601AE2DA090025CB71 /* ProtocolAbleChangeDirectionAnimator.h */,
+				08D1CA611AE2DA090025CB71 /* HavePageAbleChangeDirectionAnimator.h */,
+				08D1CA621AE2DA090025CB71 /* HavePageAbleChangeDirectionAnimator.m */,
+				08D1CA631AE2DA090025CB71 /* AbleChangeDirectionAnimator.h */,
+				08D1CA641AE2DA090025CB71 /* AbleChangeDirectionAnimator.m */,
+			);
+			name = RingFileView;
+			sourceTree = "<group>";
+		};
 		08D1CA241AE2D9EF0025CB71 = {
 			isa = PBXGroup;
 			children = (
@@ -440,18 +462,9 @@
 				08D1CA3D1AE2D9EF0025CB71 /* Main.storyboard */,
 				08D1CA3A1AE2D9EF0025CB71 /* ViewController.h */,
 				08D1CA3B1AE2D9EF0025CB71 /* ViewController.m */,
-				08D1CA591AE2DA090025CB71 /* RingFileViewDataSourceProtocol.h */,
-				08D1CA5A1AE2DA090025CB71 /* RingFileView.h */,
-				08D1CA5B1AE2DA090025CB71 /* RingFileView.m */,
-				08D1CA5C1AE2DA090025CB71 /* OneSideNoAllowDoubleObjectLeftAndRightQueueMnager.h */,
-				08D1CA5D1AE2DA090025CB71 /* OneSideNoAllowDoubleObjectLeftAndRightQueueMnager.m */,
-				08D1CA5E1AE2DA090025CB71 /* LeftAndRightQueueMnager.h */,
-				08D1CA5F1AE2DA090025CB71 /* LeftAndRightQueueMnager.m */,
-				08D1CA601AE2DA090025CB71 /* ProtocolAbleChangeDirectionAnimator.h */,
-				08D1CA611AE2DA090025CB71 /* HavePageAbleChangeDirectionAnimator.h */,
-				08D1CA621AE2DA090025CB71 /* HavePageAbleChangeDirectionAnimator.m */,
-				08D1CA631AE2DA090025CB71 /* AbleChangeDirectionAnimator.h */,
-				08D1CA641AE2DA090025CB71 /* AbleChangeDirectionAnimator.m */,
+				08422F001AEFEDE500701682 /* ImageProvider.h */,
+				08422F011AEFEDE500701682 /* ImageProvider.m */,
+				08422F031AF001F800701682 /* RingFileView */,
 				08D1CA401AE2D9EF0025CB71 /* Images.xcassets */,
 				08D1CA421AE2D9EF0025CB71 /* LaunchScreen.xib */,
 				08D1CA371AE2D9EF0025CB71 /* RingFileView.xcdatamodeld */,
@@ -703,6 +716,7 @@
 				08D1CA331AE2D9EF0025CB71 /* main.m in Sources */,
 				08D1CA3C1AE2D9EF0025CB71 /* ViewController.m in Sources */,
 				08D1CA391AE2D9EF0025CB71 /* RingFileView.xcdatamodeld in Sources */,
+				08422F021AEFEDE500701682 /* ImageProvider.m in Sources */,
 				08D1CA681AE2DA090025CB71 /* HavePageAbleChangeDirectionAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,13 +16,13 @@ enum FlipDirection {LeftToRight,RightTOLeft};
 
 @property (readonly) UIView *leftBaseView;
 @property (readonly) UIView *rightBaseView;
-@property (weak) NSObject<RingFileViewDataSourceProtocol> *dataSource;
+@property (weak) NSObject<ProtocolRingFileViewDataSource> *dataSource;
 
 - (instancetype)initWithOrigin:(CGPoint)origin PaperSize:(CGSize)size PaperHoleInsetPersent:(float)insetPersent RingRadius:(float)ringRadius;
 -(void)flipAtDirection:(enum FlipDirection)direction;
 -(void)setEachFrontPageSmallerIndex:(NSInteger)page;
 -(void)setRingFileDirection:(enum FlipDirection)direction;
 -(BOOL)isCurrentAnimation;
--(void)setA:(CATransform3D)transform;
+-(void)setBaseTransform:(CATransform3D)transform;
 
 @end
