@@ -1,8 +1,9 @@
 # RingFileView-Objective-C
+RingFileView written in  Objective-C, which can be used as a ImageViewer like a RingFile.
+
 
 ![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample1.jpeg)
-
-RingFileView written in  Objective-C, which can be used as a ImageViewer like a RingFile.
+![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample2.png)
 
 # Easy to use
 
