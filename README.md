@@ -1,5 +1,6 @@
 # RingFileView-Objective-C
 RingFileView はリングファイルをイメージした画像ビューアーです。
+
 RingFileView written in  Objective-C, which can be used as a ImageViewer like a RingFile.
 
 ![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample2.png)
@@ -8,7 +9,9 @@ RingFileView written in  Objective-C, which can be used as a ImageViewer like a 
 
 
 タイトル ブラックジャックによろしく
+
 著作者名  佐藤秀峰
+
 サイト名 漫画 on web
 
 # Easy to use
