@@ -5,6 +5,10 @@
 //  Created by Inba on 2015/04/19.
 //  Copyright (c) 2015年 Inba. All rights reserved.
 //
+//画像提供
+//タイトル ブラックジャックによろしく
+//著作者名  佐藤秀峰
+//サイト名 漫画 on web
 
 #import "AppDelegate.h"
 

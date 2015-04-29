@@ -27,7 +27,7 @@
     
     _provider = [[ImageProvider alloc]init];
     
-    _ringFileView = [[RingFileView alloc]initWithOrigin:CGPointMake(self.view.center.x-250,self.view.center.y-125) PaperSize:CGSizeMake(250,250) PaperHoleInsetPersent:0 RingRadius:5];
+    _ringFileView = [[RingFileView alloc]initWithOrigin:CGPointMake(self.view.center.x-200,self.view.center.y-100) PaperSize:CGSizeMake(200,200) PaperHoleInsetPersent:0 RingRadius:5];
     [self.view addSubview:_ringFileView];
     UITapGestureRecognizer *tapLeft = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(left)];
     UITapGestureRecognizer *tapright = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(right)];
