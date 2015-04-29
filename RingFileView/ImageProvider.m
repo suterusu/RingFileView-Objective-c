@@ -13,6 +13,11 @@
 @implementation ImageProvider
 
 -(UIImage *)getNextPageImageAtPageIndex:(NSInteger)pageIndex{
+    if (pageIndex > 100) {
+        return nil;
+    }
+    
+    
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 100), 0, 0);
 
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 100, 100) cornerRadius:50];

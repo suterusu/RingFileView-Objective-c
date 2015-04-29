@@ -117,6 +117,9 @@
 		083FDE181AEFB8BC00F183DE /* th_th_fuga_98.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 083FDDAB1AEFB8BC00F183DE /* th_th_fuga_98.jpg */; };
 		083FDE191AEFB8BC00F183DE /* th_th_fuga_99.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 083FDDAC1AEFB8BC00F183DE /* th_th_fuga_99.jpg */; };
 		08422F021AEFEDE500701682 /* ImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 08422F011AEFEDE500701682 /* ImageProvider.m */; };
+		08ABB6A21AF0A436009FA33E /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ABB6A11AF0A436009FA33E /* SampleViewController.m */; };
+		08ABB6A51AF11A98009FA33E /* Sample2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ABB6A41AF11A98009FA33E /* Sample2ViewController.m */; };
+		08ABB6A81AF11E36009FA33E /* SampleIndexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08ABB6A71AF11E36009FA33E /* SampleIndexTableViewController.m */; };
 		08D1CA331AE2D9EF0025CB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D1CA321AE2D9EF0025CB71 /* main.m */; };
 		08D1CA361AE2D9EF0025CB71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D1CA351AE2D9EF0025CB71 /* AppDelegate.m */; };
 		08D1CA391AE2D9EF0025CB71 /* RingFileView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08D1CA371AE2D9EF0025CB71 /* RingFileView.xcdatamodeld */; };
@@ -254,6 +257,12 @@
 		083FDDAC1AEFB8BC00F183DE /* th_th_fuga_99.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = th_th_fuga_99.jpg; sourceTree = "<group>"; };
 		08422F001AEFEDE500701682 /* ImageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProvider.h; sourceTree = "<group>"; };
 		08422F011AEFEDE500701682 /* ImageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProvider.m; sourceTree = "<group>"; };
+		08ABB6A01AF0A436009FA33E /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
+		08ABB6A11AF0A436009FA33E /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
+		08ABB6A31AF11A98009FA33E /* Sample2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample2ViewController.h; sourceTree = "<group>"; };
+		08ABB6A41AF11A98009FA33E /* Sample2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample2ViewController.m; sourceTree = "<group>"; };
+		08ABB6A61AF11E36009FA33E /* SampleIndexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleIndexTableViewController.h; sourceTree = "<group>"; };
+		08ABB6A71AF11E36009FA33E /* SampleIndexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleIndexTableViewController.m; sourceTree = "<group>"; };
 		08D1CA2D1AE2D9EF0025CB71 /* RingFileView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingFileView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D1CA311AE2D9EF0025CB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D1CA321AE2D9EF0025CB71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -462,6 +471,12 @@
 				08D1CA3D1AE2D9EF0025CB71 /* Main.storyboard */,
 				08D1CA3A1AE2D9EF0025CB71 /* ViewController.h */,
 				08D1CA3B1AE2D9EF0025CB71 /* ViewController.m */,
+				08ABB6A61AF11E36009FA33E /* SampleIndexTableViewController.h */,
+				08ABB6A71AF11E36009FA33E /* SampleIndexTableViewController.m */,
+				08ABB6A01AF0A436009FA33E /* SampleViewController.h */,
+				08ABB6A11AF0A436009FA33E /* SampleViewController.m */,
+				08ABB6A31AF11A98009FA33E /* Sample2ViewController.h */,
+				08ABB6A41AF11A98009FA33E /* Sample2ViewController.m */,
 				08422F001AEFEDE500701682 /* ImageProvider.h */,
 				08422F011AEFEDE500701682 /* ImageProvider.m */,
 				08422F031AF001F800701682 /* RingFileView */,
@@ -709,7 +724,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D1CA671AE2DA090025CB71 /* LeftAndRightQueueMnager.m in Sources */,
+				08ABB6A51AF11A98009FA33E /* Sample2ViewController.m in Sources */,
 				08D1CA661AE2DA090025CB71 /* OneSideNoAllowDoubleObjectLeftAndRightQueueMnager.m in Sources */,
+				08ABB6A81AF11E36009FA33E /* SampleIndexTableViewController.m in Sources */,
 				08D1CA691AE2DA090025CB71 /* AbleChangeDirectionAnimator.m in Sources */,
 				08D1CA361AE2D9EF0025CB71 /* AppDelegate.m in Sources */,
 				08D1CA651AE2DA090025CB71 /* RingFileView.m in Sources */,
@@ -718,6 +735,7 @@
 				08D1CA391AE2D9EF0025CB71 /* RingFileView.xcdatamodeld in Sources */,
 				08422F021AEFEDE500701682 /* ImageProvider.m in Sources */,
 				08D1CA681AE2DA090025CB71 /* HavePageAbleChangeDirectionAnimator.m in Sources */,
+				08ABB6A21AF0A436009FA33E /* SampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

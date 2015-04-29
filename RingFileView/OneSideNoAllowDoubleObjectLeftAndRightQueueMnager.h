@@ -12,7 +12,6 @@
 //それぞれのキュー内に同じオブジェクトがダブる事を許さない
 
 -(void)addObject:(id)object AtSide:(enum QueueSide)side;
-
 -(void)changeSideObject:(id)object AtSide:(enum QueueSide)side;
 //指定した側のオブジェクトを取り出し逆側へエンキューする
 

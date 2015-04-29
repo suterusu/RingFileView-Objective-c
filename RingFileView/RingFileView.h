@@ -16,10 +16,17 @@ enum FlipDirection {LeftToRight,RightTOLeft};
 
 @property (readonly) UIView *leftBaseView;
 @property (readonly) UIView *rightBaseView;
+
 @property (weak) NSObject<ProtocolRingFileViewDataSource> *dataSource;
 
+//displaying page After finishing  Animation turnning the page
+//アニメーション終了後に表示される予定のページ
+@property (readonly) NSInteger leftPage;
+@property (readonly) NSInteger rightPage;
+@property NSTimeInterval allowStartAnimetionInterval;
+
 - (instancetype)initWithOrigin:(CGPoint)origin PaperSize:(CGSize)size PaperHoleInsetPersent:(float)insetPersent RingRadius:(float)ringRadius;
--(void)flipAtDirection:(enum FlipDirection)direction;
+-(void)turnThePageAtDirection:(enum FlipDirection)direction;
 -(void)setEachFrontPageSmallerIndex:(NSInteger)page;
 -(void)setRingFileDirection:(enum FlipDirection)direction;
 -(BOOL)isCurrentAnimation;

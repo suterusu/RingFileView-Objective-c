@@ -37,6 +37,10 @@ typedef void (^AfterAnimationBlock)();
     HavePageAbleChangeDirectionAnimator *_last;
     
     CATransform3D _baseTransform;
+    
+    //早い速度でページめくりが起る事を防ぐ
+    NSDate *_preStartAnimationDate;
+    NSTimeInterval _allowStartAnimetionInterval;
 }
 
 
@@ -80,10 +84,14 @@ typedef void (^AfterAnimationBlock)();
         
         _EachDirectionAnimeKeyQueue = [[OneSideNoAllowDoubleObjectLeftAndRightQueueMnager alloc]init];
         
+        _allowStartAnimetionInterval = 0;
+        _preStartAnimationDate = [NSDate date];
+        //[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(test) userInfo:nil repeats:YES];
     }
     
     return self;
 }
+
 
 -(void)setBaseTransform:(CATransform3D)transform{
     _baseTransform = transform;
@@ -116,7 +124,12 @@ typedef void (^AfterAnimationBlock)();
 }
 
 
--(void)flipAtDirection:(enum FlipDirection)direction{
+-(void)turnThePageAtDirection:(enum FlipDirection)direction{
+    
+    if ([self isAllowAnimation]== NO) {
+        return;
+    }
+    
     enum QueueSide side = [self directionToSide:direction];
     if (_currentAddingAnimeDic.count > 0 && [_EachDirectionAnimeKeyQueue elementAtSide:!side] != nil) {
          HavePageAbleChangeDirectionAnimator *lastPushedAnime = [_currentAddingAnimeDic objectForKey:[_EachDirectionAnimeKeyQueue elementAtSide:!side]];
@@ -137,12 +150,7 @@ typedef void (^AfterAnimationBlock)();
     
     //引数の方向でページをめくる時、ページ数はどのように加算されるか
     NSInteger addAfterFlipNumber = direction == _ringFileDirection ? -1:1;
-    
-    if (addAfterFlipNumber == 1) {
-       // NSLog(@"ページ増減");
-    }else{
-        //NSLog(@"ページ減少");
-    }
+
     
     //アニメ終了後の右ページと左ページのページ数
     NSInteger nextRightPage = _rightPage +addAfterFlipNumber*2;
@@ -153,6 +161,7 @@ typedef void (^AfterAnimationBlock)();
     CAAnimationGroup *parentAnime = [self getFlipAnimationAtDirection:direction AddLayer:animationLayer];
     parentAnime.delegate = self;
     parentAnime.speed = -1;
+    
     HavePageAbleChangeDirectionAnimator *ableChangeAnimator = [[HavePageAbleChangeDirectionAnimator alloc] initWithGroupAnimation:parentAnime AddLayer:animationLayer];
     ableChangeAnimator.direction = direction;
     ableChangeAnimator.firstDirection = direction;
@@ -173,8 +182,9 @@ typedef void (^AfterAnimationBlock)();
     [_currentAddingAnimeDic setObject:ableChangeAnimator forKey:key];
     [_EachDirectionAnimeKeyQueue addObject:key AtSide:(enum QueueSide)direction];
     
-    _rightPage += addAfterFlipNumber*2;
-    _leftPage +=addAfterFlipNumber*2;
+    _rightPage = nextRightPage;
+    _leftPage = nextLeftPage;
+    _preStartAnimationDate = [NSDate date];
 }
 
 -(BOOL)isCurrentAnimation{
@@ -224,9 +234,6 @@ typedef void (^AfterAnimationBlock)();
     frontPaperLayer.frame = transformLayer.bounds;
     reversePaperLayer.frame = transformLayer.bounds;
     
-    
-
-    
     return transformLayer;
 }
 
@@ -237,17 +244,7 @@ typedef void (^AfterAnimationBlock)();
     animationPosition.byValue = [NSNumber numberWithFloat:baseMultiple*_ringRadius*2];
     animationPosition.duration = _animationDuration;
     
-    /*
-    CAKeyframeAnimation *animationTransFrom = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.y"];
-    animationTransFrom.additive = YES;
-    animationTransFrom.values = @[@0,@(baseMultiple*M_PI/2.0),@(baseMultiple*M_PI)];
-    animationTransFrom.keyTimes = @[@0,@(0.5),@1];
-    animationTransFrom.duration = _animationDuration;
-    */
-    
     CAKeyframeAnimation *animationTransFrom = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-
-
 
     NSValue *a = [NSValue valueWithCATransform3D:CATransform3DConcat(_baseTransform,layer.transform)];
     NSValue *b = [NSValue valueWithCATransform3D:
@@ -273,24 +270,19 @@ typedef void (^AfterAnimationBlock)();
     
     
     return parentAnimation;
-
-    
 }
-
-
-
 
 -(void)finishAnimationSetRightPage:(NSInteger)rightPage LeftPage:(NSInteger)leftPage DicKey:(NSString *)key{
     HavePageAbleChangeDirectionAnimator *animator = [_currentAddingAnimeDic objectForKey:key];
     
     switch (animator.direction) {
         case RightTOLeft:{
-            [animator removeLayerAfterInterval:0.2];
+            [animator removeLayerAfterInterval:0.1];
             _leftImageLayer.contents = (id)[_dataSource getNextPageImageAtPageIndex:leftPage].CGImage;
             break;
         }
         case LeftToRight:{
-            [animator removeLayerAfterInterval:0.2];
+            [animator removeLayerAfterInterval:0.1];
             _rightImageLayer.contents = (id)[_dataSource getNextPageImageAtPageIndex:rightPage].CGImage;
             break;
         }
@@ -304,6 +296,18 @@ typedef void (^AfterAnimationBlock)();
         return QueueSideRight;
     }else{
         return QueueSideLeft;
+    }
+}
+
+-(BOOL)isAllowAnimation{
+    if (_allowStartAnimetionInterval == 0) {
+        return YES;
+    }
+    
+    if (-[_preStartAnimationDate timeIntervalSinceNow] <=_allowStartAnimetionInterval) {
+        return NO;
+    }else{
+        return YES;
     }
 }
 
