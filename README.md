@@ -4,7 +4,7 @@ RingFileView はリングファイルをイメージした画像ビューアー�
 RingFileView written in  Objective-C, which can be used as a ImageViewer like a RingFile.
 
 ![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample2.png)
-![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sampleGif3.gif)
+![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sampleGif5.gif)
 
 
 
