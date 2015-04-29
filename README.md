@@ -1,10 +1,6 @@
 # RingFileView-Objective-C
 RingFileView written in  Objective-C, which can be used as a ImageViewer like a RingFile.
 
-
-![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample1.jpeg)
-![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample2.png)
-
 # Easy to use
 
     _ringFile = [[RingFileView alloc]initWithOrigin:CGPointMake(10, 10) PaperSize:CGSizeMake(200,300) PaperHoleInsetPersent:0.001 RingRadius:10];
