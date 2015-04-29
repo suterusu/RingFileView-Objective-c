@@ -1,5 +1,9 @@
 # RingFileView-Objective-C
+RingFileView はリングファイルをイメージした画像ビューアーです。
 RingFileView written in  Objective-C, which can be used as a ImageViewer like a RingFile.
+
+![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sample2.png)
+![](https://github.com/suterusu/RingFileView-Objective-c/wiki/sampleGif3.gif)
 
 # Easy to use
 
@@ -17,8 +21,8 @@ add getNextPageImageAtPageIndex In ringFile.dataSource
 [_ringFile setEachFrontPageSmallerIndex:5];
 
 # Turn to Right.
-[_ringFile flipAtDirection:RightTOLeft]
+[_ringFile turnThePageAtDirection:RightTOLeft]
 
 # Turn To Left.
-[_ringFile flipAtDirection:LeftToRight]
+[_ringFile turnThePageAtDirection:LeftToRight]
 
